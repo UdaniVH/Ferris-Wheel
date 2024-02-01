@@ -1,0 +1,159 @@
+body {
+    height: 100vw;
+    width: 100%;
+    background-color: cyan;
+    overflow: hidden;
+}
+
+.wheel {
+    border: 5px solid brown;
+    border-radius: 50%;
+    left: 35%;
+    top: 15%;
+    position: absolute;
+    height: 55vw;
+    width: 55vw;
+    max-width: 500px;
+    max-height: 500px;
+    animation-name: wheel;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.line {
+    background-color: brown;
+    width: 50%;
+    height: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0% 0%;
+}
+
+.line:nth-of-type(2) {
+    transform: rotate(60deg);
+}
+
+.line:nth-of-type(3) {
+    transform: rotate(120deg);
+}
+
+.line:nth-of-type(4) {
+    transform: rotate(180deg);
+}
+
+.line:nth-of-type(5) {
+    transform: rotate(240deg);
+}
+
+.line:nth-of-type(6) {
+    transform: rotate(300deg);
+}
+
+.circle {
+    background-image: conic-gradient(blue, red, yellow, green);
+    border: 5px solid brown;
+    border-radius: 50%;
+    position: absolute;
+    height: 30%;
+    width: 30%;
+    right: 33%;
+    top: 33%;
+    animation: circle 10s ease-in-out infinite;
+}
+
+.cabin {
+    background-color: red;
+    width: 20%;
+    height: 20%;
+    border-radius: 0 0 50% 50%;
+    position: absolute;
+    border: 2px solid;
+    transform-origin: 50% 0%;
+    animation: cabins 10s ease-in-out infinite;
+}
+
+.cabin:nth-of-type(1) {
+    right: -8.5%;
+    top: 50%;
+}
+
+.cabin:nth-of-type(2) {
+    right: 17%;
+    top: 93.5%;
+}
+
+.cabin:nth-of-type(3) {
+    right: 67%;
+    top: 93.5%;
+}
+
+.cabin:nth-of-type(4) {
+    left: -8.5%;
+    top: 50%;
+}
+
+.cabin:nth-of-type(5) {
+    left: 17%;
+    top: 7%;
+}
+
+.cabin:nth-of-type(6) {
+    right: 17%;
+    top: 7%;
+}
+
+@keyframes wheel {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes cabins {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        background-color: yellow;
+    }
+
+    50% {
+        background-color: green;
+    }
+
+    75% {
+        background-color: purple;
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes circle {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        background-image: conic-gradient(red, yellow, green, purple);
+    }
+
+    50% {
+        background-image: conic-gradient(yellow, green, purple, red);
+    }
+
+    75% {
+        background-image: conic-gradient(green, purple, red, yellow);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
